@@ -7,7 +7,7 @@ body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   transition: all 500ms ease-in-out;
   /* color: white; */
-  background: url(./sun-shining-dark-clouds-green-field.jpg) no-repeat;
+  background: url(./bg/sun-shining-dark-clouds-green-field.jpg) no-repeat;
   background-size: cover;
   background-position: center;
 }
