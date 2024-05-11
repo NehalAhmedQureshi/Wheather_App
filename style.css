@@ -1,0 +1,81 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  transition: all 500ms ease-in-out;
+  /* color: white; */
+  background: url(./sun-shining-dark-clouds-green-field.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* night gradiant */
+/* .sky
+/*****************************************
+Check out Nat's pen with animated SVG weather icons. 
+
+https://codepen.io/nsayenko/pen/JKzxdm/
+*******************************************/
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  border: 2px solid black;
+  /* backdrop-filter: blur(10px); */
+
+}
+/* -------------------- navbar --------------- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  backdrop-filter: blur(10px);
+}
+.navbar .heading {
+  margin-left: 10px;
+  transition: all 600ms ease-in-out;
+}
+.navbar .date {
+  margin-right: 15px;
+  font-weight: 600;
+}
+.navbar .time {
+  font-weight: 600;
+}
+.navbar .heading:hover {
+  cursor: pointer;
+  transform: rotateX(-360deg);
+}
+/* ------------------ end navbar ------------*/
+/* ------------------ home ------------*/
+
+.home {
+  flex-grow: 20;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+}
+table {
+  margin: auto;
+}
+/* ------------------ end home ------------*/
+
+.footer {
+  display: flex;
+  align-items: center;
+  flex-grow: 0.3;
+  border: 2px solid black;
+  backdrop-filter: blur(10px);
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+  justify-content: center;
+
+}
+.footer p a {
+  color: blue;
+}
