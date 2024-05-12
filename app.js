@@ -37,7 +37,7 @@
             // m.innerHTML = minutes
             // s.innerHTML = seconds
             // pm.innerHTML = pm
-            showTime.innerHTML = `${hours} : ${minutes} ${seconds} - ${pm}`
+            showTime.innerHTML = `${hours} : ${minutes} - ${pm}`
             // ------------- end time ----------------------
       
             // -------------------- date coding -------------
