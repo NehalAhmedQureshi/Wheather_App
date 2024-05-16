@@ -71,7 +71,7 @@ showtimeAndDate()
 
 // ------------------------------------------- wheather aapi ---------------------------------
 
-let form = document.querySelector('#weatherForm')
+let form = document.querySelector('#wheatherForm')
 let cityinput = document.querySelector('#input')
 let cityname = document.querySelector('.cityName')
 let currentCityTemp = document.querySelector('.temp')
@@ -102,22 +102,37 @@ form.addEventListener('submit', (event) => {
       // -------------- API ----------------------
       
       const APIKey = '750b9f971f71bda4db3e75d05c60f22d';
+      const APIKey2 = '1f3c4c2b3c4eb23fd91aa203c8be8e70'
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`;
+      const url2 = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKey2}`
       const main = document.querySelector('.container')
       main.classList.add('hide');
 
+      // fetch(url2)
+      // .then(response => response.json())
+      // .then(data => {
+      //       // console.log(data.list[1]);
+      // })
       fetch(url)
             .then(response => response.json())
             .then(data => {
                   console.log(data); // Check the data in the console
 
-                  const weatherDiv = document.getElementById('weather');
+                  // const weatherDiv = document.getElementById('#wheathertype');
 
                   // Extract relevant data
-                  const temp = data.main.temp;
-                  const weatherDescription = data.weather[0].description;
+                  let temp = data.main.temp;
+                  let weatherDescription = data.weather[0].description;
                   const humidity = data.main.humidity;
                   const windSpeed = data.wind.speed;
+
+                  console.log(weatherDescription);
+                  temp = Math.floor(temp - 273)
+                  // weatherDescription = weatherDescription.
+                  currentCityTemp.innerHTML = `${temp} ℃`
+                  currentCityHumidity.innerHTML = humidity 
+                  currentCityWindSpeed.innerHTML = windSpeed
+                  currentCityWheatherType.innerHTML = weatherDescription.toUpperCase()
 
                   // Create HTML content
       //        const weatherContent = `<p>Temperature: ${(temp - 273.15).toFixed(2)}°C</p>
@@ -128,7 +143,7 @@ form.addEventListener('submit', (event) => {
 
 
                   // Insert the content into the weatherDiv
-                  weatherDiv.innerHTML = weatherContent;
+                  // weatherDiv.innerHTML = weatherContent;
             })
             .catch(error => {
                   console.error('Error fetching the weather data:', error);

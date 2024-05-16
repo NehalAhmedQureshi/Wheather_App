@@ -202,6 +202,9 @@ https://codepen.io/nsayenko/pen/JKzxdm/
 .city h3 {
   font-size: 22px;
 }
+.cityName{
+  text-transform: capitalize;
+}
 .temp {
   font-size: 35px;
   position: relative;
@@ -216,13 +219,26 @@ https://codepen.io/nsayenko/pen/JKzxdm/
 }
 .dayType p {
   font-weight: 600;
-  font-size: large;
+  /* font-size: 30px; */
 }
+#wheathertype {
+  font-size: 30px;
+} 
 .description {
   display: flex;
-  flex-direction: row;
-  gap: 10px;
+  /* flex-direction: row; */
+  gap: 35px;
+  justify-content: space-between;
+  /* border: 2px solid black; */
+}
+.wind-div , .humidity-div{
+  display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.wind-div i , .humidity-div i{
+  font-size: 25px;
 }
 .weekcast {
   width: 40%;
