@@ -3,9 +3,125 @@
   margin: 0%;
   box-sizing: border-box;
 }
+/*---------------------------------------------------- login-------------------------------------- */
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+body {
+  background: url(./bg/login-bg/810262_preview.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /* transition: all 400ms ease-in-out; */
+}
+.wrapper {
+  height: 100vh;
+  width: 100%;
+
+   display: flex; 
+  justify-content: center;
+  align-items: center; 
+  /* background-color: aqua; */
+}
+.container-city {
+  position: relative;
+  /* background: purple; */
+  width: 40%;
+  height: 90vh;
+  align-self: center;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;     
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+box-shadow: 4px 4px 50px rgba(0, 0, 0, 0.2);
+border-radius: 15px;
+}
+.searchbox{
+  position: relative;
+  /* background: slateblue; */
+  /* border: 2px solid red; */
+  width: 100%;
+  height: 40px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  border-radius: 15px;
+
+}
+.searchbox input {
+  background: transparent;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+  outline: none;
+  border-radius: 15px;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: black;
+  padding: 0px 48px 0px 40px ;
+  font-weight: 500;
+  /* overflow: auto; */
+}
+
+.searchbox input::placeholder {
+  color: black;
+  text-transform: capitalize;
+}
+.searchbox button {
+  position: absolute;
+  right: 0px;
+  width: 40px ;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 28px;
+  color: black;
+  padding:5px 40px 0px 5px;
+  cursor: pointer;
+}
+.bxs-map {
+  position: absolute;
+  left: 0px;
+  font-size: 28px;
+  padding:6px 0px 0px 5px;
+  color: black;
+  cursor: pointer;
+}
+/* .bxs-map:hover{
+  cursor: pointer;
+} */
+@media screen and (max-width : 900px) {
+  .container-city {
+    width: 60%;
+  }
+}
+@media screen and (max-width : 620px) {
+  .container-city {
+    width: 80%;
+  }
+}
+@media screen and (max-width : 440px) {
+  .container-city {
+    width: 100%;
+    height: 60vh;
+  }
+}
+/*----------------------------------------------------end login-------------------------------------- */
+
 body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  transition: all 500ms ease-in-out;
+  /* transition: all 500ms ease-in-out; */
   /* color: white; */
   /* background: url(./bg/810262_preview.jpg) no-repeat; */
   background: url(./bg/sun-shining-dark-clouds-green-field.jpg) no-repeat;
@@ -20,13 +136,18 @@ Check out Nat's pen with animated SVG weather icons.
 
 https://codepen.io/nsayenko/pen/JKzxdm/
 *******************************************/
+.hide {
+  display: none;
+}
 .container {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  width: 100%;
   gap: 20px;
   /* border: 2px solid black; */
   /* backdrop-filter: blur(10px); */
+  transition: all 1000ms ease-in-out;
 }
 /* -------------------- navbar --------------- */
 .navbar {
@@ -70,16 +191,38 @@ https://codepen.io/nsayenko/pen/JKzxdm/
   width: 20%;
   height: 50vh;
   box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.2);
-  /* border-style:dashed ; */
-  /* border-bottom-color: bisque;
-border-top-color: bisque; */
-  /* color: grey; */
   border-radius: 25px;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
+  justify-content: space-around;
+  /* gap: 15px; */
   flex-direction: column;
-  padding: 10px;
+  padding: 20px;
+}
+.city h3 {
+  font-size: 22px;
+}
+.temp {
+  font-size: 35px;
+  position: relative;
+  /* color: white; */
+}
+.temp span {
+  position: absolute;
+  font-weight: 900;
+  top: 0%;
+  font-size: 16px;
+  /* color: orange; */
+}
+.dayType p {
+  font-weight: 600;
+  font-size: large;
+}
+.description {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
 }
 .weekcast {
   width: 40%;
@@ -88,9 +231,26 @@ border-top-color: bisque; */
   backdrop-filter: blur(10px);
   border-radius: 25px;
   align-items: center;
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   padding: 10px;
+}
+.hour-forecast {
+  background: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+}
+.week-forecast {
+  background:lightgoldenrodyellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 25px;
 
 }
 /* -----------------------------HOME MEDIA QUERRY -------------------- */

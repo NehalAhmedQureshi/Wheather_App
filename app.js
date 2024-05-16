@@ -37,7 +37,7 @@ function showtimeAndDate() {
       // m.innerHTML = minutes
       // s.innerHTML = seconds
       // pm.innerHTML = pm
-      showTime.innerHTML = `${hours} : ${minutes} - ${pm}`
+      showTime.innerHTML = `${hours} : ${minutes} ${seconds} - ${pm}`
       // ------------- end time ----------------------
 
       // -------------------- date coding -------------
@@ -61,16 +61,23 @@ function showtimeAndDate() {
       // y.innerHTML = year
       showDate.innerHTML = `${date}-${month}-${year}`
       // ----------------------- end date ----------------------
+      
       setTimeout(showtimeAndDate, 1000)
-
 }
+
 showtimeAndDate()
 // ----------------------------------------- end date and time------------------------------
 
+
 // ------------------------------------------- wheather aapi ---------------------------------
 
-// let currentCity = document.querySelector('')
-// let currentCityWheather = document.querySelector('')
+let form = document.querySelector('#weatherForm')
+let cityinput = document.querySelector('#input')
+let cityname = document.querySelector('.cityName')
+let currentCityTemp = document.querySelector('.temp')
+let currentCityWheatherType = document.querySelector('.dayType')
+let currentCityHumidity = document.querySelector('.humidity')
+let currentCityWindSpeed = document.querySelector('.wind')
 // let weekDay1 = document.querySelector('')
 // let weekDay2 = document.querySelector('')
 // let weekDay3 = document.querySelector('')
@@ -79,10 +86,55 @@ showtimeAndDate()
 // let weekDay6 = document.querySelector('')
 
 // '''''''''''''''''''''''''''''''''''''''''''''[''''''''''''''''']
+// let userName = prompt('Enter you name :');
+// userName = userName.toLocaleUpperCase()
+// alert(`Welcome! ${userName}`)
+form.addEventListener('submit', (event) => {
 
-const APIKey = '0c7b3149ff1a1300455025e80d0261ec'
-const url = 'http://api.weatherapi.com/v1/current.json?key=c70d97d2663546b498b52644243004&q=London&aqi=yes'
-let check = 'https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&appid={APIKey}'
+      event.preventDefault();
 
-      let response = fetch(check).then(response => response.json())
-      console.log(response);
+      // -------------------------------  CITY NAME ----------------------------------
+      
+      let city = cityinput.value;
+      console.log(city);
+      cityname.innerHTML = city
+      
+      // -------------- API ----------------------
+      
+      const APIKey = '750b9f971f71bda4db3e75d05c60f22d';
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`;
+      const main = document.querySelector('.container')
+      main.classList.add('hide');
+
+      fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                  console.log(data); // Check the data in the console
+
+                  const weatherDiv = document.getElementById('weather');
+
+                  // Extract relevant data
+                  const temp = data.main.temp;
+                  const weatherDescription = data.weather[0].description;
+                  const humidity = data.main.humidity;
+                  const windSpeed = data.wind.speed;
+
+                  // Create HTML content
+      //        const weatherContent = `<p>Temperature: ${(temp - 273.15).toFixed(2)}°C</p>
+      //       <p>Weather: ${weatherDescription}</p>
+      //       <p>Humidity: ${humidity}%</p>
+      //       <p>Wind Speed: ${windSpeed} m/s</p>
+      //   `;
+
+
+                  // Insert the content into the weatherDiv
+                  weatherDiv.innerHTML = weatherContent;
+            })
+            .catch(error => {
+                  console.error('Error fetching the weather data:', error);
+            });
+
+
+})
+
+//https://api.https://api.openweathermap.org/data/2.5/weather?q=karachi&appid=750b9f971f71bda4db3e75d05c60f22d.org/data/3.0/onecall?lat=33.44&lon=-94.04&appid=750b9f971f71bda4db3e75d05c60f22d
