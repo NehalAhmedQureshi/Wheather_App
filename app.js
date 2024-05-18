@@ -138,8 +138,8 @@ form.addEventListener('submit', (event) => {
                   temp = Math.floor(temp - 273)
                   // weatherDescription = weatherDescription.
                   currentCityTemp.innerHTML = `${temp} ℃`
-                  currentCityHumidity.innerHTML = humidity 
-                  currentCityWindSpeed.innerHTML = windSpeed
+                  currentCityHumidity.innerHTML = `${humidity} %` 
+                  currentCityWindSpeed.innerHTML = `${windSpeed} km/h`
                   currentCityWheatherType.innerHTML = weatherDescription.toUpperCase()
 
                   // Create HTML content
