@@ -9,6 +9,13 @@
   margin: 0%;
   box-sizing: border-box;
 }
+
+/* ...........scroll behaviour................ */
+html{
+  scroll-behavior: smooth;
+  scroll-margin-top: 40px;
+}
+
 body {
   background: url(./bg/login-bg/810262_preview.jpg) no-repeat;
   background-position: center;
@@ -295,7 +302,6 @@ https://codepen.io/nsayenko/pen/JKzxdm/
 }
 
 
-
 @media screen and (max-width:660px){
   .screen{
     width: 50%;
@@ -342,6 +348,11 @@ https://codepen.io/nsayenko/pen/JKzxdm/
   }
   footer p a {
     font-size: 4px;
+  }
+  .week-forecast {
+    font-size: 20px;
+    gap: 10px;
+    flex-direction: column;
   }
 }
 

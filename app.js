@@ -72,6 +72,10 @@ showtimeAndDate()
 // ------------------------------------------- wheather aapi ---------------------------------
 
 let form = document.querySelector('#wheatherForm')
+let section2 = document.querySelector('.container')
+let search = document.querySelector('.bx-search')
+
+
 let cityinput = document.querySelector('#input')
 let cityname = document.querySelector('.cityName')
 let currentCityTemp = document.querySelector('.temp')
@@ -89,6 +93,10 @@ let currentCityWindSpeed = document.querySelector('.wind')
 // let userName = prompt('Enter you name :');
 // userName = userName.toLocaleUpperCase()
 // alert(`Welcome! ${userName}`)
+search.addEventListener("click", function() {
+      section2.scrollIntoView({ behavior: "smooth" });
+});
+
 form.addEventListener('submit', (event) => {
 
       event.preventDefault();
@@ -140,7 +148,7 @@ form.addEventListener('submit', (event) => {
       //       <p>Humidity: ${humidity}%</p>
       //       <p>Wind Speed: ${windSpeed} m/s</p>
       //   `;
-
+            
 
                   // Insert the content into the weatherDiv
                   // weatherDiv.innerHTML = weatherContent;
